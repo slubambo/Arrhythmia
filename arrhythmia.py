@@ -32,16 +32,33 @@ corr_matrix = df.corr()
 # print(df.query('height==0')) #Checking if there entries with zero height
 
 sb.set_style('darkgrid')
-sb.scatterplot(x=df.weight, y=df.heartrate)
-sb.scatterplot(x=df.age, y=df.heartrate)
 plt.title("Heart Rate vs Body Weight")
 plt.ylabel("Heart Rate")
 plt.xlabel("Body Weight")
+sb.scatterplot(x=df.weight, y=df.heartrate)
+sb.scatterplot(x=df.age, y=df.heartrate)
 
 plt.show()
+plt.clf()
+plt.close()
 
 sb.distplot(df.heartrate)
 plt.show()
+
+plt.clf()
+plt.close()
+
+sb.pairplot(df)
+plt.show()
+
+plt.clf()
+plt.close()
+
+# Data Preparation
+
+print(df.query('heartrate>120'))
+
+df.drop(df.query('heartrate>120').index, inplace=True)  # removing outliers
 
 sb.pairplot(df)
 plt.show()
