@@ -5,13 +5,13 @@ import matplotlib.pyplot as plt
 
 # Understanding the data
 # Load Dataset
-df = pd.read_csv(r'arrhythmia.csv')
+df = pd.read_csv(r'arrhythmia.data.csv')
 
 #df = df.dropna(how='any')
 
 # Exploratory Analysis
 
-# print(df.shape)
+print(df.shape)
 
 print(df.columns)
 
